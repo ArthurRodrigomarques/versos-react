@@ -1,0 +1,17 @@
+@media screen and (max-width:768px){
+    .all {
+        background-color: white;
+        border-radius: 20px;
+        width: 90%;
+        height: 400px;
+        margin: 150px auto 10px auto ;
+    }
+    .autor {
+        top: 60%;
+    }
+    .botao {
+        left: 0;
+        top: 38%;
+    }
+
+}

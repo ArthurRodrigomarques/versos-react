@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-
+import './appMobile.css';
 const url = "https://type.fit/api/quotes";
 let data; 
 const numAleatorio = () => Math.floor(Math.random() * data.length) + 1
@@ -40,9 +40,10 @@ export default function App() {
   };
 
   return (
-    <div style={{background, color, transition: 'background 10s' }} className="App">
+    <div style={{background, color, transition: 'background 2s' }} className="App">
       <div className="all">
-      <h1 className="titulo">Gerador de Citações</h1>
+      <h1 className="titulo">
+Citation Generator</h1>
       <p className="citacoes">{citacoes.text}</p>
       <p className="autor">Autor: {citacoes.author ? citacoes.author : "Desconhecido"}</p>
       <button className='botao' onClick={() => window.location.reload()}>Nova citação</button>

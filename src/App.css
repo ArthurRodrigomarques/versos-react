@@ -23,17 +23,17 @@
     text-align: center;
 }
 .autor {
-    position:fixed;
+    position:absolute;
     margin-bottom: 40px;
     font-weight: 500;
     top: 45%;
     margin-left: 40px;
 }
 .botao {
-    display: block;
-    position:fixed;
-    top: 50%;
-    right: 30%;
+    display: inline-block;
+    position: relative;
+    top: 24%;
+    left: 35%;
     padding: 10px 20px;
     margin: 10px;
     border: none;
