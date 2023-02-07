@@ -7,11 +7,11 @@
         margin: 150px auto 10px auto ;
     }
     .autor {
-        top: 60%;
+       display: block;
     }
     .botao {
         left: 0;
-        top: 38%;
+        top: 30%;
     }
 
 }
