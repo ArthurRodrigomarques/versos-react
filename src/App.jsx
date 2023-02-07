@@ -7,11 +7,13 @@ const numAleatorio = () => Math.floor(Math.random() * data.length) + 1
 
 export default function App() {
   const [citacoes, setCitacoes] = useState({})
-
+  const [background, setBackground] = useState('#ffffff');
+  const [color, setColor] = useState('#000000');
+  
+  // citações aleatorias
   useEffect(() => {
     getCitacoes()
   },[]);
-
   async function getCitacoes() {
     try {
       const res = await fetch(url);
@@ -22,12 +24,29 @@ export default function App() {
     }
   }
 
+  // mudar de cor aleatoriamente
+  useEffect(() => {
+    const randomColor = getRandomColor();
+    setBackground(randomColor);
+    setColor(randomColor);
+  }, []);
+  const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
   return (
-    <div className="App">
+    <div style={{background, color, transition: 'background 10s' }} className="App">
+      <div className="all">
       <h1 className="titulo">Gerador de Citações</h1>
       <p className="citacoes">{citacoes.text}</p>
-      <p className="autor">-{citacoes.author ? citacoes.author : "Desconhecido"}</p>
-      <button className='botao' onClick={getCitacoes}>Nova citaçao</button>
+      <p className="autor">Autor: {citacoes.author ? citacoes.author : "Desconhecido"}</p>
+      <button className='botao' onClick={() => window.location.reload()}>Nova citação</button>
+      </div>
     </div>
   );
 }
