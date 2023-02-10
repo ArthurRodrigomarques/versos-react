@@ -42,8 +42,7 @@ export default function App() {
   return (
     <div style={{background, color, transition: 'background 2s' }} className="App">
       <div className="all">
-      <h1 className="titulo">
-Citation Generator</h1>
+      <h1 className="titulo">Citation Generator</h1>
       <p className="citacoes">{citacoes.text}</p>
       <p className="autor">Autor: {citacoes.author ? citacoes.author : "Desconhecido"}</p>
       <button className='botao' onClick={() => window.location.reload()}>Nova citação</button>
